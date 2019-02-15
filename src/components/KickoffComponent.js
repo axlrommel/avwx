@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {length} from 'ramda';
 
 const KickoffComponent = ({ label, getData, input, updateInput }) => (
   <label>
@@ -11,7 +12,7 @@ const KickoffComponent = ({ label, getData, input, updateInput }) => (
       value={input}
       onChange={e => updateInput(e.target.value)}
     />
-    <button disabled={input === ""} onClick={() => getData(input)}>
+    <button disabled={length(input) !== 4} onClick={() => getData(input)}>
       Go!
     </button>
   </label>
