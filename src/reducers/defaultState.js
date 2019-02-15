@@ -1,6 +1,10 @@
 export const defaultState = {
   reports: [],
-  stationInfo: []
+  stationInfo: [],
+  ui: {
+    reportsInput: "",
+    stationInfoInput: ""
+  }
 };
 
 export default defaultState;
