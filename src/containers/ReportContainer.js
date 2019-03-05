@@ -1,15 +1,21 @@
 import { connect } from "react-redux";
-import DataComponent from "../components/DataComponent.js";
+import AirportComponent from "../components/AirportComponent";
+import { LoadReport } from "../actions/report.js";
+import { labelReports } from "../constants/appConstants.js";
+import { updateReportInput } from "../actions/ui";
 
 const mapStateToProps = state => ({
+  label: labelReports,
+  input: state.ui.reportsInput,
   data: state.reports
 });
 
-const mapDispatchToProps = () => ({
-  // no dispatches
+const mapDispatchToProps = dispatch => ({
+  getData: id => dispatch(LoadReport(id)),
+  updateInput: input => dispatch(updateReportInput(input))
 });
 
 export const ReportContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(DataComponent);
+)(AirportComponent);

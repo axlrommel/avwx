@@ -1,5 +1,5 @@
 import { shallow } from "enzyme";
-import KickoffComponent from "./KickoffComponent";
+import AirportComponent from "./AirportComponent";
 import { assoc, pipe } from "ramda";
 import React from "react";
 
@@ -8,9 +8,9 @@ const props = pipe(
   assoc("label", "blah")
 )({});
 
-describe("Kickoff Component", () => {
+describe("AirportComponent", () => {
   it("renders the page ", () => {
-    const wrapper = shallow(<KickoffComponent {...props} />);
+    const wrapper = shallow(<AirportComponent {...props} />);
     expect(wrapper.find("input")).not.toHaveLength(0);
   });
 });

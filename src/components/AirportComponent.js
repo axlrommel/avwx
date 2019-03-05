@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {length} from 'ramda';
+import DataComponent from './DataComponent';
 
-const KickoffComponent = ({ label, getData, input, updateInput }) => (
+const AirportComponent = ({ label, getData, input, updateInput, data }) => (
+  <>
   <label>
     <label>{label}</label>
     <input
@@ -16,13 +18,16 @@ const KickoffComponent = ({ label, getData, input, updateInput }) => (
       Go!
     </button>
   </label>
+  <DataComponent data={data}></DataComponent>
+  </>
 );
 
-KickoffComponent.propTypes = {
+AirportComponent.propTypes = {
   getData: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   updateInput: PropTypes.func.isRequired,
-  input: PropTypes.string.isRequired
+  input: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired
 };
 
-export default KickoffComponent;
+export default AirportComponent;
