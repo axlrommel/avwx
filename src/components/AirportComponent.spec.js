@@ -6,8 +6,6 @@ import React from "react";
 const props = pipe(
   assoc("getData", () => "hi"),
   assoc("label", "blah"),
-  assoc("updateInput", () => "hello"),
-  assoc("input", ''),
   assoc("data", [])
 )({});
 

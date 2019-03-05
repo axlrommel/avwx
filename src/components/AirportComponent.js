@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import {length} from 'ramda';
 import DataComponent from './DataComponent';
 
-const AirportComponent = ({ label, getData, input, updateInput, data }) => (
+const AirportComponent = ({ label, getData, data }) => {
+  const [input, setInput] = useState('');
+  return (
   <>
   <label>
     <label>{label}</label>
@@ -12,7 +14,7 @@ const AirportComponent = ({ label, getData, input, updateInput, data }) => (
       name="code"
       id="inputCode"
       value={input}
-      onChange={e => updateInput(e.target.value)}
+      onChange={e => setInput(e.target.value)}
     />
     <button disabled={length(input) !== 4} onClick={() => getData(input)}>
       Go!
@@ -20,13 +22,11 @@ const AirportComponent = ({ label, getData, input, updateInput, data }) => (
   </label>
   <DataComponent data={data}></DataComponent>
   </>
-);
+)};
 
 AirportComponent.propTypes = {
   getData: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
-  updateInput: PropTypes.func.isRequired,
-  input: PropTypes.string.isRequired,
   data: PropTypes.array.isRequired
 };
 
