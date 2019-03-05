@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import { createStore, applyMiddleware } from "redux";
-import Root from "./components/Root";
+import App from "./components/App";
 import rootReducer from "./reducers";
 import logger from "redux-logger";
 import ReduxThunk from "redux-thunk";
@@ -13,4 +13,4 @@ const store = createStore(
   applyMiddleware(ReduxThunk, logger)
 );
 
-render(<Root store={store} />, document.getElementById("root"));
+render(<App store={store} />, document.getElementById("root"));
