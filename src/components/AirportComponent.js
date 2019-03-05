@@ -7,7 +7,6 @@ const AirportComponent = ({ label, getData, data }) => {
   const [input, setInput] = useState('');
   return (
   <>
-  <label>
     <label>{label}</label>
     <input
       type="text"
@@ -19,7 +18,6 @@ const AirportComponent = ({ label, getData, data }) => {
     <button disabled={length(input) !== 4} onClick={() => getData(input)}>
       Go!
     </button>
-  </label>
   <DataComponent data={data}></DataComponent>
   </>
 )};
