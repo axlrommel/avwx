@@ -7,15 +7,17 @@ import ReduxThunk from "redux-thunk";
 import reports from "./reducers/reports.js";
 import stationInfo from "./reducers/stationInfo.js";
 
+const defaultState = {
+  reports: [],
+  stationInfo: []
+};
+
 const store = createStore(
   combineReducers({
     reports,
     stationInfo
   }),
-  {
-    reports: [],
-    stationInfo: []
-  },
+  defaultState,
   applyMiddleware(ReduxThunk, logger)
 );
 
