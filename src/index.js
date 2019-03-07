@@ -1,15 +1,21 @@
 import React from "react";
 import { render } from "react-dom";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import App from "./components/App";
-import rootReducer from "./reducers";
 import logger from "redux-logger";
 import ReduxThunk from "redux-thunk";
-import defaultState from "./reducers/defaultState";
+import reports from "./reducers/reports.js";
+import stationInfo from "./reducers/stationInfo.js";
 
 const store = createStore(
-  rootReducer,
-  defaultState,
+  combineReducers({
+    reports,
+    stationInfo
+  }),
+  {
+    reports: [],
+    stationInfo: []
+  },
   applyMiddleware(ReduxThunk, logger)
 );
 
