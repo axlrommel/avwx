@@ -13,7 +13,7 @@ const AirportComponent = ({ label, getData, data }) => {
         name="code"
         id="inputCode"
         value={input}
-        onChange={e => setInput(e.target.value)}
+        onChange={(e) => setInput(e.target.value)}
       />
       <button disabled={length(input) !== 4} onClick={() => getData(input)}>
         Go!
@@ -26,7 +26,7 @@ const AirportComponent = ({ label, getData, data }) => {
 AirportComponent.propTypes = {
   getData: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
 };
 
 export default AirportComponent;
