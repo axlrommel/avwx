@@ -7,7 +7,6 @@ import ReduxThunk from "redux-thunk";
 import stationInfo from "./reducers/stationInfo.js";
 
 const defaultState = {
-  reports: [],
   stationInfo: [],
 };
 
